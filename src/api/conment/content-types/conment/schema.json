@@ -12,18 +12,19 @@
   },
   "attributes": {
     "contact": {
-      "type": "text"
+      "type": "string",
+      "required": true
     },
-    "blogs": {
+    "blog": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::blog.blog",
-      "mappedBy": "conment"
+      "inversedBy": "conments"
     },
     "user": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::author.author",
+      "target": "plugin::users-permissions.user",
       "mappedBy": "conment"
     }
   }
