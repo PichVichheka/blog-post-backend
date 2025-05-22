@@ -33,6 +33,12 @@
       "relation": "oneToOne",
       "target": "api::blog.blog",
       "mappedBy": "author"
+    },
+    "conment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::conment.conment",
+      "inversedBy": "user"
     }
   }
 }

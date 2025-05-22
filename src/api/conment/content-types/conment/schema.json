@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conments",
+  "info": {
+    "singularName": "conment",
+    "pluralName": "conments",
+    "displayName": "conments",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "contact": {
+      "type": "text"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "conment"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::author.author",
+      "mappedBy": "conment"
+    }
+  }
+}

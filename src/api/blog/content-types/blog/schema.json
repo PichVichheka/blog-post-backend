@@ -29,6 +29,29 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "blogs"
+    },
+    "like": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::like.like",
+      "inversedBy": "blogs"
+    },
+    "conment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::conment.conment",
+      "inversedBy": "blogs"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
