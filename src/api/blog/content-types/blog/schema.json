@@ -12,6 +12,12 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "comment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "blog"
     }
   }
 }
