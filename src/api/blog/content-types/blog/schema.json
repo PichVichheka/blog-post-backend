@@ -20,9 +20,9 @@
     },
     "author": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::author.author",
-      "inversedBy": "blog"
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "blogs"
     },
     "category": {
       "type": "relation",
@@ -30,19 +30,19 @@
       "target": "api::category.category",
       "inversedBy": "blogs"
     },
-    "like": {
+    "likes": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::like.like",
-      "inversedBy": "blogs"
+      "mappedBy": "blog"
     },
-    "conment": {
+    "conments": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::conment.conment",
-      "inversedBy": "blogs"
+      "mappedBy": "blog"
     },
-    "images": {
+    "image": {
       "allowedTypes": [
         "images",
         "files",
@@ -50,8 +50,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false,
-      "required": true
+      "multiple": true
     }
   }
 }
