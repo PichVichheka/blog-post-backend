@@ -391,7 +391,13 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     >;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     conments: Schema.Attribute.Relation<'oneToMany', 'api::conment.conment'>;
-    contact: Schema.Attribute.String & Schema.Attribute.Required;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -445,7 +451,7 @@ export interface ApiConmentConment extends Struct.CollectionTypeSchema {
   collectionName: 'conments';
   info: {
     description: '';
-    displayName: 'conments';
+    displayName: 'comments';
     pluralName: 'conments';
     singularName: 'conment';
   };
