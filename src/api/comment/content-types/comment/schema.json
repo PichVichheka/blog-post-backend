@@ -26,12 +26,6 @@
       "relation": "manyToOne",
       "target": "api::blog.blog",
       "inversedBy": "comment"
-    },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "comments"
     }
   }
 }
